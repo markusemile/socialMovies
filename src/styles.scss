@@ -35,5 +35,111 @@ $socialMovies-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+
+//font
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: poppins, "Helvetica Neue", sans-serif; }
+
+$primary : rgb(27, 35, 71);
+$secondary: rgb(121, 190, 255);
+$danger: rgb(223, 7, 0);
+$warning: rgb(255, 81, 0);
+$form : rgb(226, 226, 226);
+$light : rgb(240, 240, 240);
+$dark : rgb(21, 21, 22);
+
+@mixin backColor($color){
+  background-color: $color;
+  &.hover:hover{
+    background-color: darken($color,10%);
+  }
+}
+
+
+// background
+.bg-form{
+ @include backColor($form);
+}
+
+.bg-light{
+  @include backColor($light);
+}
+.bg-secondary{
+  @include backColor($secondary);
+}
+
+//padding/margin
+@for $i from 0 through 10 {
+  .p-#{$i}{
+    padding:  #{$i}vh;
+  }
+  .m-#{$i}{
+    margin:  #{$i}vh;
+  }
+  .px-#{$i}{
+    padding: 0 #{$i}vh;
+  }
+  .mx-#{$i}{
+    margin: 0 #{$i}vh;
+  }
+  .py-#{$i}{
+    padding: #{$i}vh 0;
+  }
+  .my-#{$i}{
+    margin: #{$i}vh 0;
+  }
+  .pt-#{$i}{
+    padding: #{$i}vh 0 0 0;
+  }
+  .mt-#{$i}{
+    margin: #{$i}vh 0 0 0;
+  }
+  .pb-#{$i}{
+    padding: 0 0 #{$i}vh 0 ;
+  }
+  .mb-#{$i}{
+    margin: 0 0 #{$i}vh 0 ;
+  }
+  .pl-#{$i}{
+    padding: 0 0 0 #{$i}vw;
+  }
+  .ml-#{$i}{
+    margin: 0 0 0 #{$i}vw;
+  }
+  .pr-#{$i}{
+    padding: 0  #{$i}vw 0 0;
+  }
+  .mr-#{$i}{
+    margin: 0  #{$i}vw 0 0;
+  }
+}
+
+// header
+@for $i from 1 to 7{
+  h#{$i}{
+    font-family: oswald;
+    font-size:calc(8vh - #{$i}vh);
+    &::first-letter{
+      text-transform: capitalize;
+    }
+  }
+}
+
+// border
+@for $i from 1 to 5{
+  .rounded-#{$i}{
+    border-radius:calc(10px * #{$i});
+  }
+  .rounded-top-#{$i}{
+    border-top-left-radius:calc(10px * #{$i});
+    border-top-right-radius:calc(10px * #{$i});
+  }
+  .border-b-#{$i}{
+    border-bottom:#{$i}px solid;
+  }
+}
+.border-light{
+  border-color:$light;
+}

@@ -19,12 +19,22 @@ export class CreateComponent {
   ){ }
 
   fillForm(id : number){
-    console.log(this.form);
+    // on va chercher les datas du film via le service
+     this.service.getMovieDetail(id).subscribe((datas:any)=>{
+      Object.entries(datas).forEach(data=>{
+        console.log(data);
+        
+      })
+     })
+    
+    // console.log(this.form);
   }
 
   toggleTarget(elem : any){
-   this.accordionOpenItem=elem;
     console.log(elem);
+    
+   this.accordionOpenItem=elem;
+
     
   }
 

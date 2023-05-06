@@ -1,7 +1,11 @@
-.accordion-body{
-    display:none;
-    user-select: none;
+.accordion-item{
+    user-select: none; 
+    cursor: pointer;
 }
-.accordion-open{
-    display:block;
-}
+.accordion-body {
+        display:none;
+    }
+
+    .accordion-open {
+        display:block;
+    }

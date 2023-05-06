@@ -1,19 +1,19 @@
 <h1>add a new movie to your movieTk</h1>
 <app-api-search (fillForm)="fillForm($event)"></app-api-search>
-<form [formGroup]="form">
-    <mod-accordion id="movie-accordion" openItem={{accordionOpenItem}}>
+<form [formGroup]="form" class="bg-form">
+    <mod-accordion id="movie-accordion" openItem={{accordionOpenItem}} class="mod-accordion">
         <mod-accordion-item 
                 title="Movie detail" 
-                id="movie-Detail" 
+                id="movieDetail" 
                 openItem="openItem"
+                [first]=true
                 (toggleTarget)="toggleTarget($event)"
-
+                class="my-3"
                 >
             <ng-container>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam odit officia fuga, nemo eum cupiditate
-                nostrum maiores quo ullam minus consectetur facere modi repellat fugit ea quidem in suscipit cum deleniti
-                assumenda inventore accusantium? Quisquam numquam praesentium accusamus explicabo blanditiis itaque
-                inventore perferendis dolores omnis. Fugiat at quaerat officia dolor.
+               <form>
+                
+               </form>
             </ng-container>
         </mod-accordion-item>
         <mod-accordion-item 

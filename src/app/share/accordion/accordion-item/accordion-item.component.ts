@@ -9,13 +9,13 @@ export class AccordionItemComponent {
 
 @Input('title') title : string|null = null;
 @Input('id') id : string|null = null;
+@Input() first : boolean|null = null;
 @Input('openItem') open : string|null = null;
-@Output() toggleTarget: EventEmitter<string> = new EventEmitter();
 
-toggleAccordion(){
-    this.toggleTarget.emit(this.getId())
+toggleAccordion(event : any){
+   // this.toggleTarget.emit(this.getId())
+  let t = event.target.parentElement.id;
+  document.querySelector('#'+t+" .accordion-body")?.classList.toggle('accordion-open'); 
 }
 
-getId(){return this.title?.replace(/\s/g,'-')}
-
-}
+getId(){return this.id?.replace(/\s/g,'-')}}
