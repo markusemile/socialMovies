@@ -1,0 +1,1 @@
+export type Tform<T> = { [K in keyof T] ?: any }

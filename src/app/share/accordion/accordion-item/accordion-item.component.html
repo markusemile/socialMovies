@@ -1,0 +1,7 @@
+<div id={{getId()}} class="accordion-item" (click)="toggleAccordion()">
+    <p id="" class="accordion-item-header" >{{title}}</p>
+</div>
+    <div id='{{getId()}}-body' class="accordion-body">
+        <ng-content>        
+        </ng-content>
+    </div>

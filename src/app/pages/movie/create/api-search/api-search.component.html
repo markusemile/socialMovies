@@ -1,0 +1,20 @@
+<p>search new film on moviedb database or add manually</p>
+<div class="form-group">
+    <form [formGroup]="searchForm" (ngSubmit)="getMovieInfo()">
+        <div class="form-label">
+            <div class="form-input">
+                <input list="movie-import-from-api" [(ngModel)]="search" placeholder="keyword, title"
+                    (keyup)="searchMovie()" formControlName="search">
+                <button class="btn btn-info">
+                    remplire le formulaire
+                </button>
+            </div>
+            <datalist id="movie-import-from-api">
+                <option id="{{movie.id}}" *ngFor="let movie of movieList" value="{{movie.title}}">
+            </datalist>
+        </div>
+    </form>
+    <form>
+
+    </form>
+</div>
